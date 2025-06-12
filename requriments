@@ -1,0 +1,12 @@
+//backend installations//
+npm init -y
+npm install bcryptjs cors dotenv express cookie-parser jsonwebtoken mongodb mongoose morgan helmet nodemon
+to run backend
+<---cd server
+node index.js--->//run
+//frontend installations//
+npx create-react-app client
+cd client
+npm install axios react-router-dom @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+<----cd client
+npm start---->//run

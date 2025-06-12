@@ -1,0 +1,282 @@
+/* client/src/styles/view.css */
+
+:root {
+    --view-bg: #f8f9fa;
+    --view-primary: #74b9ff;
+    --view-secondary: #636e72;
+    --view-accent: #fdcb6e;
+    --view-text: #2d3436;
+    --view-white: #ffffff;
+    --view-shadow: rgba(0, 0, 0, 0.1);
+    --view-gradient-1: rgba(238, 174, 202, 0.4);
+    --view-gradient-2: rgba(148, 187, 233, 0.4);
+}
+
+body,
+html {
+    overflow-x: hidden;
+    background: var(--view-bg);
+}
+
+.view {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postPage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    margin: 0 8px;
+    font-size: 1.5rem;
+    color: var(--view-primary);
+    transition: color 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--view-accent);
+}
+
+.postContainer {
+    width: 90%;
+    max-width: 1400px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--view-gradient-1) 0%, var(--view-gradient-2) 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 32px var(--view-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.postPageBG {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--view-gradient-1), var(--view-gradient-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.postPageBG .upperContent {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 8px 32px var(--view-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.upperContent h1 {
+    color: var(--view-text);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.upperContent p {
+    font-size: 1.2rem;
+    color: var(--view-secondary);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.images img {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--view-shadow);
+    transition: transform 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.02);
+}
+
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.rightContainer .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: var(--view-primary);
+    color: var(--view-white);
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rightContainer span {
+    color: var(--view-text);
+    font-weight: 600;
+}
+
+.rightContainer p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--view-secondary);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.edit_button,
+.del_button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--view-primary);
+    color: var(--view-white);
+}
+
+.edit_button:hover,
+.del_button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.del_button {
+    background: #ff7675;
+}
+
+.rating-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 2px 8px var(--view-shadow);
+}
+
+.rating-display .star {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.rating-display .star.empty {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.rating-display .rating-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+@media screen and (max-width: 1024px) {
+    .postContainer {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .postPageBG {
+        height: 350px;
+    }
+
+    .upperContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .images img {
+        height: 400px;
+    }
+
+    .rightContainer {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .postPageBG {
+        height: 300px;
+        margin-top: 40px;
+    }
+
+    .upperContent {
+        padding: 30px;
+    }
+
+    .upperContent h1 {
+        font-size: 2rem;
+    }
+
+    .upperContent p {
+        font-size: 1.1rem;
+    }
+
+    .images img {
+        height: 300px;
+    }
+
+    .rightContainer .title {
+        font-size: 1.2rem;
+    }
+
+    .rightContainer p {
+        font-size: 1.1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit_button,
+    .del_button {
+        width: 100%;
+        max-width: 200px;
+    }
+}

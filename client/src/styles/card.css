@@ -1,0 +1,155 @@
+/* client/src/styles/card.css */
+
+:root {
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(31, 38, 135, 0.37);
+    --card-text: #1a1a1a;
+    --card-title: #2d3436;
+    --card-subtitle: #636e72;
+    --card-button-bg: rgba(255, 255, 255, 0.8);
+    --card-button-hover: #74b9ff;
+    --card-rating: #fdcb6e;
+    --gradient-1: rgba(238, 174, 202, 0.7);
+    --gradient-2: rgba(148, 187, 233, 0.7);
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 700px;
+    margin: 25px;
+    background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 100%);
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.card .content .image-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card .content .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .content .image-container img {
+    transform: scale(1.05);
+}
+
+.card .content h4 {
+    font-size: 1.8em;
+    color: var(--card-title);
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.card .content h6 {
+    font-size: 1.2em;
+    color: var(--card-subtitle);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card .content h6 span {
+    color: var(--card-text);
+    font-weight: 600;
+}
+
+.card .content p {
+    color: var(--card-text);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    font-size: 1.1em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.card .content button {
+    padding: 12px 30px;
+    background: var(--card-button-bg);
+    color: var(--card-text);
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 1.1em;
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card .content button:hover {
+    transform: translateY(-3px);
+    background-color: var(--card-button-hover);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.rating-display .star {
+    color: var(--card-rating);
+    font-size: 18px;
+}
+
+.rating-display .rating-value {
+    font-size: 16px;
+    color: var(--card-text);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 300px;
+        height: 600px;
+        margin: 15px;
+    }
+
+    .card .content .image-container {
+        height: 280px;
+    }
+
+    .card .content h4 {
+        font-size: 1.5em;
+    }
+
+    .card .content p {
+        font-size: 1em;
+    }
+}

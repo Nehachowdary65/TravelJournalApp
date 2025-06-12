@@ -1,0 +1,223 @@
+/* client/src/styles/create.css */
+
+.create {
+    background-color:rgb(193, 252, 232);
+}
+
+.create .createContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgb(255, 202, 202);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.create .createContainer .input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.create .createContainer textarea {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 15px;
+    background-color: white;
+    font-family: "Urbanist", sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    resize: vertical;
+    min-height: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.create .createContainer textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
+}
+
+.picsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.formInput {
+    text-align: center;
+}
+
+.formInput h2 {
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.formInput .icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.formInput .icon:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.uploadedPictures {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.images img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.input input {
+    font-size: 16px;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: "Urbanist", sans-serif;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.input input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
+}
+
+.create .createBtn {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background: var(--primary);
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 30px auto;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.createBtn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
+}
+
+.createBtn:disabled {
+    background: var(--border);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.input h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+select#rating {
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 12px auto;
+}
+
+select#rating:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
+}
+
+select#rating option {
+    padding: 12px;
+    font-size: 16px;
+}
+
+.required {
+    color: var(--error);
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .create .createContainer {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .formInput h2 {
+        font-size: 20px;
+    }
+
+    .input label, .input h1 {
+        font-size: 16px;
+    }
+
+    .create .createBtn {
+        width: 180px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .input input, .input textarea, select#rating {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+}
